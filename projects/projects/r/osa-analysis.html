@@ -2,26 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>OSA Sleep Apnea Analysis</title>
+  <title>OSA Sleep Apnea Analysis – R Project</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background-color: #fefefe; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 22px; margin-top: 30px; }
+    p, li { font-size: 16px; max-width: 800px; }
+    ul { margin-bottom: 30px; }
+    .download { margin-top: 40px; font-size: 18px; }
+    a { color: #0044cc; }
+  </style>
 </head>
 <body>
-  <h1>OSA Sleep Apnea Analysis</h1>
+  <h1>🧠 OSA Sleep Apnea Analysis – R Project</h1>
 
-  <p>This R project explores predictors of Apnea Index and tests kitchen energy consumption with ANOVA.</p>
+  <p>This project investigates factors affecting the Apnea Index (AI) using multiple linear regression and ANOVA techniques in R. It uses two datasets: one on sleep characteristics, and another on energy consumption from kitchen ranges and menus.</p>
 
-  <h2>Summary</h2>
+  <h2>📌 Overview</h2>
   <ul>
-    <li>Tools: Base R (`lm`, `aov`, `plot`)</li>
-    <li>Models: Multiple Linear Regression & ANOVA</li>
-    <li>Conclusion: Age, neck size, and SBP significantly influence AI</li>
+    <li><strong>Tools:</strong> R (base functions only)</li>
+    <li><strong>Techniques:</strong> Correlation matrix, multiple linear regression, ANOVA (balanced design), model comparison</li>
+    <li><strong>Data:</strong> <code>sleep.csv</code> and <code>energy.csv</code></li>
   </ul>
 
-  <h2>Project Files</h2>
+  <h2>📊 Key Methods</h2>
   <ul>
-    <li><a href="../../files/osa_analysis.R">osa_analysis.R</a></li>
-    <li><a href="../../files/README.md">README.md</a></li>
+    <li>Exploratory Data Analysis and correlation visualization with <code>plot()</code> and <code>cor()</code></li>
+    <li>Model 1: Full regression with all predictors (age, bmi, neck_size, sbp)</li>
+    <li>Model 2: Optimized model excluding insignificant predictor (bmi)</li>
+    <li>Model 3: Includes squared terms for neck_size and sbp</li>
+    <li>ANOVA performed on energy dataset with interaction effects</li>
   </ul>
 
-  <a href="../../index.html">← Back to Portfolio</a>
+  <h2>📈 Results Summary</h2>
+  <ul>
+    <li><strong>Best model:</strong> Model 3 (highest Adjusted R²: 0.228)</li>
+    <li><strong>Significant predictors:</strong> age, neck_size², sbp²</li>
+    <li>Both range and menu significantly affect energy usage, but interaction is not significant</li>
+  </ul>
+
+  <h2>🧪 Model Diagnostics</h2>
+  <ul>
+    <li>Residual plots confirm equal variance assumption</li>
+    <li>Q-Q plots confirm normality</li>
+    <li>Leverage and Cook’s distance inspected for outliers</li>
+  </ul>
+
+  <h2>📎 Downloads</h2>
+  <ul>
+    <li><a href="../../files/osa_analysis.R" download>osa_analysis.R</a> (R code)</li>
+    <li><a href="../../files/Jaemeanshine_46740600.pdf" download>Analysis Report PDF</a></li>
+  </ul>
+
+  <p><a href="../../index.html">← Back to Portfolio</a></p>
 </body>
 </html>
